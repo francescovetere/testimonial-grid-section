@@ -1,0 +1,259 @@
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+
+/* https://piccalil.li/blog/a-modern-css-reset */
+
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role='list'],
+ol[role='list'] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* custom props */
+:root {
+  /* typography */
+  --ff-primary: 'Barlow Semi Condensed', sans-serif;
+
+  --fw-500: 500;
+  --fw-600: 600;
+
+  --fs-300: .9rem;
+  --fs-400: 1rem;
+  --fs-500: 1.5rem;
+
+  /* colors */
+  --clr-light-violet: hsl(263, 55%, 65%);
+  --clr-moderate-violet: hsl(263, 55%, 52%);
+  --clr-dark-grayish-blue: hsl(217, 19%, 35%);
+  --clr-dark-blackish-blue: hsl(219, 29%, 14%);
+  --clr-white: hsl(0, 0%, 100%);
+  --clr-light-gray: hsl(0, 0%, 81%);
+  --clr-light-grayish-blue: hsl(210, 46%, 95%);
+}
+
+body {
+  background-color: var(--clr-light-gray);
+
+  font-family: var(--ff-primary);
+}
+
+/** card **/
+
+/** card typography **/
+.card__name,
+.card__summary {
+  font-weight: var(--fw-600);
+}
+
+.card__role,
+.card__description {
+  font-weight: var(--fw-500);
+}
+
+.card__name,
+.card__description {
+  font-size: var(--fs-400);
+}
+
+.card__role {
+  font-size: var(--fs-300);
+}
+
+.card__summary {
+  font-size: var(--fs-500);
+}
+
+/** card colors **/
+.card--violet {
+  background-color: var(--clr-moderate-violet);
+}
+
+.card--dark-grayish-blue {
+  background-color: var(--clr-dark-grayish-blue);
+}
+
+.card--dark-blackish-blue {
+  background-color: var(--clr-dark-blackish-blue);
+}
+
+.card--white {
+  background-color: white;
+}
+
+.card--violet .card__name,
+.card--violet .card__summary,
+.card--violet .card__role,
+.card--violet .card__description,
+.card--dark-grayish-blue .card__name,
+.card--dark-grayish-blue .card__summary,
+.card--dark-grayish-blue .card__role,
+.card--dark-grayish-blue .card__description,
+.card--dark-blackish-blue .card__name,
+.card--dark-blackish-blue .card__summary,
+.card--dark-blackish-blue .card__role,
+.card--dark-blackish-blue .card__description {
+  color: var(--clr-light-grayish-blue);
+}
+
+.card--white .card__name,
+.card--white .card__summary,
+.card--white .card__role,
+.card--white .card__description {
+  color: var(--clr-dark-grayish-blue);
+}
+
+.card__role,
+.card__description {
+  opacity: .5;
+}
+
+.card--violet .card__avatar,
+.card--dark-blackish-blue .card__avatar {
+  border-color: var(--clr-light-violet);
+}
+
+.card--white .card__avatar {
+  border-color: var(--clr-white);
+}
+
+.card--dark-grayish-blue .card__avatar {
+  border-color: var(--clr-dark-grayish-blue);
+}
+
+/** card layout **/
+.card {
+  --card-padding: 2em;
+  --card-spacing: 1em;
+  --card-radius: 15px;
+
+  padding: var(--card-padding);
+
+  border-radius: var(--card-radius);
+}
+
+.card>*:not(:last-child) {
+  margin-bottom: var(--card-spacing);
+}
+
+.card__header {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-areas:
+    "avatar name"
+    "avatar role";
+  column-gap: 1em;
+}
+
+.card__avatar {
+  grid-area: avatar;
+
+  width: 50px;
+  height: 50px;
+  border: 3px solid;
+
+  border-radius: 50%;
+}
+
+.card__name {
+  grid-area: name;
+}
+
+.card__role {
+  grid-area: role;
+}
+
+/** testimonials grid **/
+.testimonials-grid {
+  --testimonials-grid-relative-width: 75%;
+
+  display: grid;
+  gap: 2em;
+
+  width: clamp(280px, var(--testimonials-grid-relative-width), 1600px);
+  margin-inline: auto;
+  margin-block: 2em;
+}
+
+@media (min-width: 1200px) {
+  .testimonials-grid {
+    --testimonials-grid-relative-width: 90%;
+
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  .card--wide {
+    grid-column: span 2;
+  }
+
+  .card--tall {
+    grid-row: span 2;
+  }
+}
