@@ -95,12 +95,13 @@ select {
   --clr-dark-grayish-blue: hsl(217, 19%, 35%);
   --clr-dark-blackish-blue: hsl(219, 29%, 14%);
   --clr-white: hsl(0, 0%, 100%);
+  --clr-light-gray-100: hsl(0, 0%, 92%);
   --clr-light-gray: hsl(0, 0%, 81%);
   --clr-light-grayish-blue: hsl(210, 46%, 95%);
 }
 
 body {
-  background-color: var(--clr-light-gray);
+  background-color: var(--clr-light-gray-100);
 
   font-family: var(--ff-primary);
 }
