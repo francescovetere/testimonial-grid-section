@@ -190,13 +190,20 @@ body {
 
 /** card layout **/
 .card {
-  --card-padding: 2em;
+  --card-padding: 1.5em;
   --card-spacing: 1em;
   --card-radius: 15px;
 
   padding: var(--card-padding);
 
   border-radius: var(--card-radius);
+}
+
+.card--violet {
+  background-image: url(https://raw.githubusercontent.com/francescovetere/testimonial-grid-section/main/images/bg-pattern-quotation.svg);
+  background-repeat: no-repeat;
+  background-position: top right 10%;
+  background-size: 150px;
 }
 
 .card>*:not(:last-child) {
