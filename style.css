@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
 
 /* https://piccalil.li/blog/a-modern-css-reset */
 
@@ -24,8 +24,8 @@ dd {
 }
 
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
-ul[role='list'],
-ol[role='list'] {
+ul[role="list"],
+ol[role="list"] {
   list-style: none;
 }
 
@@ -80,12 +80,12 @@ select {
 /* custom props */
 :root {
   /* typography */
-  --ff-primary: 'Barlow Semi Condensed', sans-serif;
+  --ff-primary: "Barlow Semi Condensed", sans-serif;
 
   --fw-500: 500;
   --fw-600: 600;
 
-  --fs-300: .9rem;
+  --fs-300: 0.9rem;
   --fs-400: 1rem;
   --fs-500: 1.5rem;
 
@@ -173,7 +173,7 @@ body {
 
 .card__role,
 .card__description {
-  opacity: .5;
+  opacity: 0.5;
 }
 
 .card--violet .card__avatar,
@@ -207,7 +207,7 @@ body {
   background-size: 150px;
 }
 
-.card>*:not(:last-child) {
+.card > *:not(:last-child) {
   margin-bottom: var(--card-spacing);
 }
 
