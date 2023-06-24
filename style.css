@@ -242,26 +242,37 @@ body {
 .testimonials-grid {
   --testimonials-grid-relative-width: 75%;
 
-  display: grid;
-  gap: 2em;
-
-  width: clamp(280px, var(--testimonials-grid-relative-width), 1600px);
+  width: clamp(280px, var(--testimonials-grid-relative-width), 1700px);
   margin-inline: auto;
   margin-block: 2em;
 }
 
-@media (min-width: 1200px) {
+@media (min-width: 500px) {
   .testimonials-grid {
-    --testimonials-grid-relative-width: 90%;
+    --testimonials-grid-relative-width: 95%;
+  }
+}
 
+/***********************/
+/***** GRID LAYOUT *****/
+/***********************/
+
+.testimonials-grid {
+  display: grid;
+  gap: 1em;
+}
+
+@media (min-width: 800px) {
+  .testimonials-grid {
     grid-template-columns: repeat(4, 1fr);
   }
 
-  .card--wide {
+  .grid-col-span-2 {
     grid-column: span 2;
   }
 
-  .card--tall {
-    grid-row: span 2;
+  .card:last-child {
+    grid-column-start: 4;
+    grid-row: 1 / span 2;
   }
 }
